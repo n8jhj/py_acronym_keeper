@@ -4,13 +4,15 @@ version = "0.1.0"
 description = "An easy-to-use place to keep acronyms."
 authors = ["Nathaniel Jones <nathaniel-j-jones@proton.me>"]
 license = "MIT"
-readme = "README.md"
+readme = "README.adoc"
 
 [tool.poetry.dependencies]
 python = "^3.10"
 click = "^8.1.7"
 tomlkit = "^0.12.4"
 
+[tool.poetry.scripts]
+pak = "py_acronym_keeper.cli.root:root_group"
 
 [build-system]
 requires = ["poetry-core"]
