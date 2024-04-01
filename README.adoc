@@ -1,0 +1,11 @@
+= Py Acronym Keeper (PAK)
+
+Designed to be an easy-to-use place to keep acronyms. It is CLI-focused (thanks to https://github.com/pallets/click[Click]) and uses TOML (thanks to https://github.com/python-poetry/tomlkit[tomlkit]) under the hood.
+
+== CLI-focused
+
+Because they offer a lot of functionality at your fingertips, can be self-documenting, and many developers are familiar with CLIs.
+
+== TOML as source of truth
+
+A single TOML file is used as the source of truth for storing acronyms. This way acronyms can easily be version controlled, and the file easily searched/modified if desired - though the goal is to have a CLI that handles this in a simpler way.

@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "py-acronym-keeper"
+version = "0.1.0"
+description = "An easy-to-use place to keep acronyms."
+authors = ["Nathaniel Jones <nathaniel-j-jones@proton.me>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+click = "^8.1.7"
+tomlkit = "^0.12.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

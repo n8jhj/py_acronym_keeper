@@ -1,0 +1,10 @@
+{
+    "version": "0.2",
+    "language": "en",
+    // Allowing compound words can result in false negatives.
+    // https://github.com/streetsidesoftware/vscode-spell-checker/issues/345
+    "allowCompoundWords": false,
+    "words": [
+        "tomlkit"
+    ]
+}
