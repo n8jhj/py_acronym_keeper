@@ -1,3 +1,16 @@
 = To Do
 
 * [ ] Command `self` to activate shell completion according to directions at: https://click.palletsprojects.com/en/8.1.x/shell-completion/
+* [ ] Multiple TOML files for, e.g., version control in separate repos.
+** [ ] Allow users to register multiple file paths for different docs. These dirs could conceivably be in Git repos, or other kinds of VCS repos.
+* [ ] Sugar for pushing/pulling updates via Git (and possibly other VCSes).
+** [ ] Decide whether to support Git only, or other VCSes as well.
+** [ ] Document the decision.
+* [ ] Groups or tags to associate acronyms with each other and facilitate sorting/filtering. Could be implemented as another field in the TOML, an array of strings.
+** [ ] Could be used to allow transferring entire groups to other TOML files.
+** [ ] Ability to reorganize (merge, delete, rename) groups without data loss.
+* [ ] Allow multiple reference links.
+* [ ] Links to alternate meanings of the same acronym.
+* [ ] "As opposed to" field to help find related acronyms/terms.
+// cspell:ignore QSPI
+* [ ] "See also" links to related acronyms. Esp. intended for acronyms that are slight variations of each other, such as SPI and QSPI.
