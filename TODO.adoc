@@ -1,0 +1,3 @@
+= To Do
+
+* [ ] Command `self` to activate shell completion according to directions at: https://click.palletsprojects.com/en/8.1.x/shell-completion/

@@ -3,3 +3,5 @@
 
 ### PYTHON ###
 __pycache__/
+# Can be handy for debugging.
+debug.py

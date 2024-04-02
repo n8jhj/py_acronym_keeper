@@ -5,6 +5,7 @@
     // https://github.com/streetsidesoftware/vscode-spell-checker/issues/345
     "allowCompoundWords": false,
     "words": [
+        "platformdirs",
         "tomlkit"
     ]
 }

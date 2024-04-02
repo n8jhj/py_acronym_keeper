@@ -10,6 +10,7 @@ readme = "README.adoc"
 python = "^3.10"
 click = "^8.1.7"
 tomlkit = "^0.12.4"
+platformdirs = "^4.2.0"
 
 [tool.poetry.scripts]
 pak = "py_acronym_keeper.cli.root:root_group"
