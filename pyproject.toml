@@ -15,6 +15,9 @@ platformdirs = "^4.2.0"
 [tool.poetry.scripts]
 pak = "py_acronym_keeper.cli.root:root_group"
 
+[tool.poetry.group.test.dependencies]
+pytest = "^8.2.0"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"

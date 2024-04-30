@@ -6,6 +6,7 @@
     "allowCompoundWords": false,
     "words": [
         "platformdirs",
+        "sessionstart",
         "tomlkit"
     ]
 }
