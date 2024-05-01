@@ -1,0 +1,9 @@
+[PAK]
+meaning = "Py Acronym Keeper"
+description = "A really cool Python package for storing acronyms."
+reference = "https://github.com/n8jhj/py_acronym_keeper"
+
+[TLA]
+meaning = "Three Letter Acronym"
+description = "An acronym that consists of three letters."
+reference = ""
