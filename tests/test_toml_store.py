@@ -1,14 +1,23 @@
+import pytest
+
 from py_acronym_keeper import config
 from py_acronym_keeper.toml_store import TOMLStore
 
 
-# TODO: Implement a test that checks that the default TOML file has the correct
-# contents.
+def test_default_contents():
+    store = TOMLStore()
+    store.load()
+    acronyms = store.acronyms
+
+    assert len(acronyms) == 0
+    assert bool(acronyms) == False
+    assert "hello" not in acronyms
+    with pytest.raises(KeyError):
+        acronyms["anything"]
 
 
 def test_load():
     store = TOMLStore(config.REPO_TEST_DATA_DIR / "happy_path.toml")
-
     store.load()
     acronyms = store.acronyms
 

@@ -1,5 +1,12 @@
 = To Do
 
+* [ ] Basic MVP functionality.
+** [x] Load from TOML file.
+*** [x] Logic
+*** [ ] CLI
+** [ ] Write to TOML file.
+*** [ ] Logic
+*** [ ] CLI
 * [ ] Command `self` to activate shell completion according to directions at: https://click.palletsprojects.com/en/8.1.x/shell-completion/
 * [ ] Multiple TOML files for, e.g., version control in separate repos.
 ** [ ] Allow users to register multiple file paths for different docs. These dirs could conceivably be in Git repos, or other kinds of VCS repos.
