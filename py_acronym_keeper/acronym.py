@@ -15,6 +15,9 @@ class Acronym:
         self.description: str = description
         self.reference: str = reference
 
+    def __repr__(self) -> str:
+        return f"{type(self).__name__}({self.name})"
+
     @staticmethod
     def from_dict(name: str, fields: dict[str, str]) -> "Acronym":
         return Acronym(
@@ -35,7 +38,7 @@ class Pack(Mapping):
         return key in self._acronyms
 
     def __iter__(self) -> Iterator:
-        return iter(self._acronyms)
+        return iter(self._acronyms.values())
 
     def __len__(self) -> int:
         return len(self._acronyms)

@@ -7,3 +7,12 @@ reference = "https://github.com/n8jhj/py_acronym_keeper"
 meaning = "Three Letter Acronym"
 description = "An acronym that consists of three letters."
 reference = ""
+
+[ABC]
+meaning = "Some invalid acronym used for testing"
+description = """
+This is a really long description. Upon printing via the CLI, it results in a \
+line of six bajillion quintillion frombillion mopsquillion foschillion \
+characters.\
+"""
+reference = ""

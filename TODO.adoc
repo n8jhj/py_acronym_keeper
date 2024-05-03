@@ -3,7 +3,7 @@
 * [ ] Basic MVP functionality.
 ** [x] Load from TOML file.
 *** [x] Logic
-*** [ ] CLI
+*** [x] CLI
 ** [ ] Write to TOML file.
 *** [ ] Logic
 *** [ ] CLI
@@ -22,3 +22,4 @@
 // cspell:ignore QSPI
 * [ ] "See also" links to related acronyms. Esp. intended for acronyms that are slight variations of each other, such as SPI and QSPI.
 * [ ] Preferred reference. Allow users to specify their preferred reference source, whether Wikipedia, TechTarget, etc.
+* [ ] Consider allowing combining all acronyms and persistent state in one file in USER_DATA_DIR, esp. if performance of having to open multiple files for a single command is an issue.

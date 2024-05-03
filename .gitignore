@@ -5,3 +5,6 @@
 __pycache__/
 # Can be handy for debugging.
 debug.py
+
+### TESTS ###
+tests/temp/

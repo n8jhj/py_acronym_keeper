@@ -24,7 +24,7 @@ class TOMLStore:
                 Default is False.
         """
         self._file_path: Path = self._default_file_path
-        if path is not None:
+        if path:
             self._file_path = path
         self._file_path.parent.mkdir(parents=parents, exist_ok=True)
 
