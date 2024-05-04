@@ -24,8 +24,15 @@ def root_group(ctx: click.Context, file: Path):
     #
     # Ensure that ctx.obj exists and is a dict (in case we are called by means
     # other than `root_group(obj={})`).
+    prepopulate_context(ctx, file)
+
+
+def prepopulate_context(ctx: click.Context, file: Path) -> None:
     ctx.ensure_object(dict)
-    ctx.obj["store"] = TOMLStore(file)
+    if "store" not in ctx.obj or not ctx.obj["store"]:
+        ctx.obj["store"] = TOMLStore(file)
+    if "printer" not in ctx.obj or not ctx.obj["printer"]:
+        ctx.obj["printer"] = Printer()
 
 
 # TODO: pak list kl* : List acronyms starting with "kl"
@@ -33,13 +40,37 @@ def root_group(ctx: click.Context, file: Path):
 # TODO: pak list -c ONFi : Case-sensitive list of acronyms matching "ONFi" (default insensitive)
 
 
+def validate_max_line_length(ctx, param, value: int | None) -> int | None:
+    if value is None:
+        return value
+
+    printer: Printer = ctx.obj["printer"]
+    try:
+        printer.max_line_length = value
+    except ValueError as e:
+        raise click.BadParameter(str(e))
+    return value
+
+
 @root_group.command("list")
+@click.argument("pattern", nargs=-1)
+@click.option(
+    "--max-length",
+    "-m",
+    type=int,
+    callback=validate_max_line_length,
+    help="Maximum length to limit output lines to. Use -1 for no limit.",
+)
 @click.pass_context
-def list_command(ctx: click.Context) -> None:
-    """List acronyms."""
+def list_command(
+    ctx: click.Context, pattern: list[str], max_length: int | None
+) -> None:
+    """List acronyms that match PATTERN."""
     store: TOMLStore = ctx_store if (ctx_store := ctx.obj["store"]) else TOMLStore()
     store.load()
-    printer: Printer = Printer()
+    printer = ctx.obj["printer"]
+    if max_length is not None:
+        printer.max_line_length = max_length
     click.echo(printer.stringify_pack(store.acronyms))
 
 
