@@ -18,6 +18,7 @@
 ** [ ] Ability to reorganize (merge, delete, rename) groups without data loss.
 * [ ] Allow multiple reference links.
 * [ ] Links to alternate meanings of the same acronym.
+* [ ] Links to alternate acronyms with the same meaning. (E.g. Inverter-Based Resource (IBR) and Converter Interfaced Generation (CIG))
 * [ ] "As opposed to" field to help find related acronyms/terms.
 // cspell:ignore QSPI
 * [ ] "See also" links to related acronyms. Esp. intended for acronyms that are slight variations of each other, such as SPI and QSPI.
