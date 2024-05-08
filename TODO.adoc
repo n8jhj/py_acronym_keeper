@@ -25,3 +25,4 @@
 * [ ] Preferred reference. Allow users to specify their preferred reference source, whether Wikipedia, TechTarget, etc.
 * [ ] Consider allowing combining all acronyms and persistent state in one file in USER_DATA_DIR, esp. if performance of having to open multiple files for a single command is an issue.
 * [ ] Check integrity of a given TOML file.
+* [ ] Check for completion, e.g. flag acronyms that don't have all fields filled. Maybe rank by how many fields are missing.
