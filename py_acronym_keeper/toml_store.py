@@ -11,7 +11,7 @@ from .acronym import Acronym, Pack
 class TOMLStore:
     """Describes the TOML structure used for storing acronyms."""
 
-    _default_file_path: Path = config.USER_DATA_DIR / "acronyms.toml"
+    _default_file_path: Path = config.USER_DEFAULT_STORE_PATH
     _repr_max_path_len: int = 30
     assert _repr_max_path_len > 3
 
@@ -26,22 +26,27 @@ class TOMLStore:
         self._file_path: Path = self._default_file_path
         if path:
             self._file_path = path
-        self._file_path.parent.mkdir(parents=parents, exist_ok=True)
+
+        self.path.parent.mkdir(parents=parents, exist_ok=True)
 
         self._pack: Pack = Pack()
 
-        if not self._file_path.is_file():
+        if not self.path.is_file():
             self._doc = tomlkit.document()
-            with open(self._file_path, "w") as tf:
+            with open(self.path, "w") as tf:
                 tomlkit.dump(self._doc, tf)
             return
 
-        with open(self._file_path, "r") as tf:
+        with open(self.path, "r") as tf:
             self._doc = tomlkit.load(tf)
 
     def __repr__(self) -> str:
         max_len = self._repr_max_path_len - 3
-        return f"TOMLStore({str(self._file_path)[-max_len:]:.>{max_len+3}})"
+        return f"TOMLStore({str(self.path)[-max_len:]:.>{max_len+3}})"
+
+    @property
+    def path(self) -> Path:
+        return self._file_path
 
     @property
     def acronyms(self) -> Pack:
@@ -58,10 +63,10 @@ class TOMLStore:
     def load(self) -> None:
         """Loads acronyms in from the file store. Overwrites the current store."""
         self._pack = Pack()
-        with open(self._file_path, "r") as tf:
+        with open(self.path, "r") as tf:
             self._doc = tomlkit.load(tf)
         self._pack.add_many(self._doc)
 
     def write(self):
-        with open(self._file_path, "w") as tf:
+        with open(self.path, "w") as tf:
             tomlkit.dump(self._doc, tf)

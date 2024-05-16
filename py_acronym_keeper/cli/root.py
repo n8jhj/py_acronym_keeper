@@ -75,3 +75,11 @@ def list_command(
 
 
 # TODO: pak add ONFi : Prompt for fields of, and add, ONFi
+
+
+@root_group.command("store")
+@click.pass_context
+def store_command(ctx: click.Context) -> None:
+    """Show the file system location where acronyms are kept."""
+    store: TOMLStore = ctx_store if (ctx_store := ctx.obj["store"]) else TOMLStore()
+    click.echo(store.path)
