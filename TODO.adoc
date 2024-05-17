@@ -33,3 +33,4 @@
 *** [ ] Have a `--force` option to override such restrictions on user entry.
 **** [ ] Possibly auto-log an issue to the project when they do so.
 ** [ ] Recognized acronyms should be formatted (colored?) differently when displaying definitions.
+* [ ] Export to dictionary command, for exporting selected acronyms to a dictionary that tools like cSpell can use.
