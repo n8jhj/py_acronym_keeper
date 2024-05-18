@@ -6,20 +6,21 @@ import tomlkit
 
 from . import config
 from .acronym import Acronym, Pack
+from .util import Stringer
 
 
 class TOMLStore:
     """Describes the TOML structure used for storing acronyms."""
 
-    _default_file_path: Path = config.USER_DEFAULT_STORE_PATH
-    _repr_max_path_len: int = 30
+    _default_file_path: Path = config.user_default_store_path()
+    _repr_max_path_len: int = config.REPR_MAX_PATH_LEN
     assert _repr_max_path_len > 3
 
     def __init__(self, path: Path | None = None, parents: bool = False) -> None:
         """Creates an instance of TOMLStore.
 
         Args:
-            path: Path to TOML file. Default is the user data dir.
+            path: Path to TOML file. Default location is the user data dir.
             parents: Whether to create parent directories, if they don't exist.
                 Default is False.
         """
@@ -41,8 +42,7 @@ class TOMLStore:
             self._doc = tomlkit.load(tf)
 
     def __repr__(self) -> str:
-        max_len = self._repr_max_path_len - 3
-        return f"TOMLStore({str(self.path)[-max_len:]:.>{max_len+3}})"
+        return f"{type(self).__name__}({Stringer.truncate(str(self.path), self._repr_max_path_len)})"
 
     @property
     def path(self) -> Path:

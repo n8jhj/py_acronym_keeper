@@ -1,6 +1,7 @@
 """Defines functionality for printing acronyms to the console."""
 
 from .acronym import Acronym, Pack
+from .util import Stringer
 
 
 class Printer:
@@ -34,10 +35,9 @@ class Printer:
         return value >= cls._smallest_allowed_max_line_length or value < 0
 
     def _truncate(self, s: str) -> str:
-        if self.max_line_length >= 0 and len(s) > self.max_line_length:
-            suffix = self._truncation_suffix
-            return s[: self.max_line_length - len(suffix)] + suffix
-        return s
+        return Stringer.truncate(
+            s, self.max_line_length, suffix=self._truncation_suffix
+        )
 
     def stringify_acronym(self, a: Acronym) -> str:
         """Returns a single-line string representation of the given Acronym."""

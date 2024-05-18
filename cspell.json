@@ -5,6 +5,7 @@
     // https://github.com/streetsidesoftware/vscode-spell-checker/issues/345
     "allowCompoundWords": false,
     "words": [
+        "monkeypatching",
         "platformdirs",
         "prepopulate",
         "sessionstart",
