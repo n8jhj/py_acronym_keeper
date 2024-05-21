@@ -34,15 +34,10 @@ class Printer:
     def is_max_line_length_valid(cls, value: int) -> bool:
         return value >= cls._smallest_allowed_max_line_length or value < 0
 
-    def _truncate(self, s: str) -> str:
-        return Stringer.truncate(
-            s, self.max_line_length, suffix=self._truncation_suffix
-        )
-
     def stringify_acronym(self, a: Acronym) -> str:
         """Returns a single-line string representation of the given Acronym."""
         line: str = f"{a.name} : {a.meaning} : {a.description}"
-        return self._truncate(line)
+        return Stringer.truncate(line, self.max_line_length)
 
     def stringify_pack(self, pack: Pack) -> str:
         """Returns a string representation of acronyms that can be printed."""

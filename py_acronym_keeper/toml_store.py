@@ -42,7 +42,7 @@ class TOMLStore:
             self._doc = tomlkit.load(tf)
 
     def __repr__(self) -> str:
-        return f"{type(self).__name__}({Stringer.truncate(str(self.path), self._repr_max_path_len)})"
+        return f"{type(self).__name__}({Stringer.truncate(str(self.path), self._repr_max_path_len, tail=True)})"
 
     @property
     def path(self) -> Path:
