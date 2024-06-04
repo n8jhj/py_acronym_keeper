@@ -25,9 +25,11 @@
 * [ ] "See also" links to related acronyms. Esp. intended for acronyms that are slight variations of each other, such as SPI and QSPI.
 * [ ] Preferred reference config option. Allow users to specify their preferred reference source, whether Wikipedia, TechTarget, etc. This might involve either (a) dynamically fetching definitions or (b) storing multiple references based on different sources.
 * [ ] Consider allowing combining all acronyms and persistent state in one file in USER_DATA_DIR, esp. if performance of having to open multiple files for a single command is an issue.
-* [ ] Check integrity of a given TOML file.
-* [ ] Check for completion, e.g. flag acronyms that don't have all fields filled. Maybe rank by how many fields are missing.
-* [ ] If an acronym definition contains other acronyms, allow the option to expand out those acronyms within the parent definition so users don't have to go search another layer deeper.
+* [ ] A `check` command of sorts
+** [ ] Check integrity of a given TOML file.
+** [ ] Check for incompletion of acronyms, e.g. flag ones that don't have all fields filled. Could possibly allow to ignore certain incomplete ones. Possibly rank by number of missing fields.
+** [ ] Check for any definitions that contain other acronyms which are not defined.
+* [ ] While viewing, if an acronym definition contains other acronyms, allow the option to expand those out within the parent definition so users don't have to go search another layer deeper.
 * [ ] Recognize acronyms contained in other acronym definitions.
 ** [ ] If the user inputs such a definition that spells out the dependency acronym (e.g. the CHAP Wikipedia page mentions PPP as "Point-to-Point Protocol (PPP)"), they should be prompted to make another entry for that acronym, with fields automatically pre-filled based on what they entered. This is an attempt to get the user to document acronyms used in other acronym definitions.
 *** [ ] Have a `--force` option to override such restrictions on user entry.
