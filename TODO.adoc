@@ -39,3 +39,5 @@
 ** [ ] To dictionary that tools like cSpell can use.
 ** [ ] To JSON.
 ** [ ] To AsciiDoc table.
+* [ ] Expand PAK to handle terms as well as acronyms, e.g. Linux Secure Boot.
+** [ ] Although, terms could likely be handled as acronyms.
