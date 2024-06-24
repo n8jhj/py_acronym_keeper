@@ -41,3 +41,7 @@
 ** [ ] To AsciiDoc table.
 * [ ] Expand PAK to handle terms as well as acronyms, e.g. Linux Secure Boot.
 ** [ ] Although, terms could likely be handled as acronyms.
+* [ ] Add a "quote" category. So PAK can keep acronyms, terms, and quotes.
+** [ ] Consider making Py ___ Keeper a platform upon which different keepers of things can be built.
+*** [ ] There should be commonalities like TOML file and tags. The distinctions would lie in the data stored.
+** [ ] Example/test: "The formulation of a problem is often more essential than its solution which may be merely a matter of mathematical or experimental skill." - Albert Einstein
