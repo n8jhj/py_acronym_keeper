@@ -45,3 +45,6 @@
 ** [ ] Consider making Py ___ Keeper a platform upon which different keepers of things can be built.
 *** [ ] There should be commonalities like TOML file and tags. The distinctions would lie in the data stored.
 ** [ ] Example/test: "The formulation of a problem is often more essential than its solution which may be merely a matter of mathematical or experimental skill." - Albert Einstein
+* [ ] Expand PAK to deal with topics, under which umbrella both acronyms and terms fit.
+
+image::assets/organization_design.png[]
